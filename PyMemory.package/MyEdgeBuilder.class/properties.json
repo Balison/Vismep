@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "AlisonFernandez 4/11/2019 18:39",
+	"super" : "RTEdgeBuilder",
+	"category" : "PyMemory-Visualization",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"originalShape",
+		"edgeColor"
+	],
+	"name" : "MyEdgeBuilder",
+	"type" : "normal"
+}

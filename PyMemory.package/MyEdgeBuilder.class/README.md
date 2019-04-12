@@ -1,0 +1,1 @@
+I'm a edge builder with the posibility to do edges from A to A.

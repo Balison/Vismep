@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "AlisonFernandez 4/11/2019 18:42",
+	"super" : "PyGeneralVisual",
+	"category" : "PyMemory-Visualization",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"function",
+		"incoming",
+		"outgoing",
+		"myself"
+	],
+	"name" : "PyFunctionVisual",
+	"type" : "normal"
+}

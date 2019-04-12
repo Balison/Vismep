@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "AlisonFernandez 4/11/2019 18:49",
+	"super" : "RubHighlightSegmentMorph",
+	"category" : "PyMemory-Visualization",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"colorLine"
+	],
+	"name" : "PyRubHighlightSegmentMorph",
+	"type" : "normal"
+}

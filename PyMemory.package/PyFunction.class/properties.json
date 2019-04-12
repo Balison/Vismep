@@ -1,0 +1,23 @@
+{
+	"commentStamp" : "AlisonFernandez 4/11/2019 17:46",
+	"super" : "Object",
+	"category" : "PyMemory-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"file",
+		"name",
+		"calledBy",
+		"callsTo",
+		"thread",
+		"lineStart",
+		"lineEnd",
+		"memory",
+		"sourceCode",
+		"memoryLines",
+		"view"
+	],
+	"name" : "PyFunction",
+	"type" : "normal"
+}

@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "AlisonFernandez 4/11/2019 18:57",
+	"super" : "TestCase",
+	"category" : "PyMemory-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"funA",
+		"funB",
+		"funC"
+	],
+	"name" : "PyFunctionTest",
+	"type" : "normal"
+}

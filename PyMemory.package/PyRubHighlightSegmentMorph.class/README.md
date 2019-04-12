@@ -1,0 +1,1 @@
+I represent a special highlight for the source code of a PyFunction

@@ -1,0 +1,3 @@
+querying
+postLoadDoIt
+	PharoLightTheme beCurrent.

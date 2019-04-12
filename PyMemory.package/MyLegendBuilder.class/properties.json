@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "AlisonFernandez 4/11/2019 18:41",
+	"super" : "RTLegendBuilder",
+	"category" : "PyMemory-Visualization",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "MyLegendBuilder",
+	"type" : "normal"
+}

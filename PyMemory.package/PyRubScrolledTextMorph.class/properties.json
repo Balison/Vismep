@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "AlisonFernandez 4/11/2019 18:49",
+	"super" : "RubScrolledTextMorph",
+	"category" : "PyMemory-Visualization",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"normalizer"
+	],
+	"name" : "PyRubScrolledTextMorph",
+	"type" : "normal"
+}

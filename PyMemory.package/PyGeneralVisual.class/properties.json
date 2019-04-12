@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "AlisonFernandez 4/12/2019 11:39",
+	"super" : "RTBuilder",
+	"category" : "PyMemory-Visualization",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"model"
+	],
+	"name" : "PyGeneralVisual",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "AlisonFernandez 4/11/2019 18:37",
+	"super" : "PyFunction",
+	"category" : "PyMemory-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "PyRoot",
+	"type" : "normal"
+}
