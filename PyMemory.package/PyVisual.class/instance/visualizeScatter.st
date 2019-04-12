@@ -11,7 +11,7 @@ visualizeScatter
 	ds points: (model values reject: [ :v | v name = '<root>']).
 	ds x: #timesExecuted.
 	ds y: [ :m | m memory ].
-	ds interaction popupView: self popupBlock.
+	ds interaction popupView: self popupBlock backgroundColor: (Color lightGray alpha: 0.8).
 	
 	b add: ds.
 	b axisX title: '#Executions'.
