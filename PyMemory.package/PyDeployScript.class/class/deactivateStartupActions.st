@@ -1,0 +1,3 @@
+configuration
+deactivateStartupActions
+	StartupPreferencesLoader allowStartupScript: false.

@@ -8,3 +8,8 @@ menuCommandOn: aBuilder
 			parent: self projectName asSymbol;
 			label: 'Open directory';
 			action: [ self new openDirectory ].
+	(aBuilder item: #'Open last Directory')
+			order: 0.0020; 
+			parent: self projectName asSymbol;
+			label: 'Open last directory';
+			action: [ self new openLastDirectory ].

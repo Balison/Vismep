@@ -4,10 +4,13 @@ sourceCode
 
 	| writerCode contents |
 	(sourceCode isNil and: [ self file isNotNil ]) ifTrue: [ 
-		contents := file asFileReference readStream contents.
 		writerCode := WriteStream with: ''.
-		lineStart to: lineEnd do: [ :num | 
+		file asFileReference exists 
+		ifTrue: [ 
+			contents := file asFileReference readStream contents.
+			lineStart to: lineEnd do: [ :num | 
 			writerCode nextPutAll: (contents lineNumber: num);
-						cr].
+						cr]. ]
+		ifFalse: [ writerCode nextPutAll: 'I cant load the file! The folder is missed' ].
 		sourceCode := writerCode contents. ].
 	^ sourceCode

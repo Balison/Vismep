@@ -1,4 +1,7 @@
 action
 openDirectory
 
-	^ PyLoader new visualizeFolder inspect.
+	| directory |
+	directory := UIManager default chooseDirectory.
+	LastDirectory := directory.
+	^ (PyLoader new visualizeFolder: directory) inspect.

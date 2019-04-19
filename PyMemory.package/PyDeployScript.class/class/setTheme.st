@@ -1,0 +1,3 @@
+initialization
+setTheme
+	PharoLightTheme beCurrent.

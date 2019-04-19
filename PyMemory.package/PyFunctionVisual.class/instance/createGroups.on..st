@@ -9,8 +9,11 @@ createGroups: els on: aView
 	self highlightNode: myself elements first.
 	
 	
-	es := RTBox color: Color white; elementsOn: {#incoming .#myself. #outgoing}.
-	es second when: TRMouseClick do: [  ].
+	es := RTBox elementsOn: {#incoming .#myself. #outgoing}.
+
+	es first trachelShape strokePaint: Color red.
+	es second trachelShape strokePaint: Color black.
+	es third trachelShape strokePaint: Color blue.
 	aView add: es.
 	es @ RTDraggable.
 	RTNest new

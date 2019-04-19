@@ -1,13 +1,13 @@
 {
 	"commentStamp" : "",
 	"super" : "Object",
-	"category" : "PyMemory-MenuWorld",
+	"category" : "PyMemory-Visualization",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [
-		"LastDirectory"
+		"IsDeployed"
 	],
 	"instvars" : [ ],
-	"name" : "PyWorldMenu",
+	"name" : "PyDeployScript",
 	"type" : "normal"
 }

@@ -1,0 +1,3 @@
+configuration
+beDeployed
+	IsDeployed := true

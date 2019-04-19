@@ -6,4 +6,5 @@ normalizeEdges: els
 		elements: els;
 		normalizeLineWidth: [:a :b | b calledBy at: a ]
 		min: 1
-		max: 4.
+		max: 4
+		using: self transformation.
