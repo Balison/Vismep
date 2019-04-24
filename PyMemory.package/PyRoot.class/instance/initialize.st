@@ -6,4 +6,5 @@ initialize
 	lineStart := 0.
 	name := '<root>'.
 	memory := 0.01.
-	sourceCode := '#Only a root method by default'
+	sourceCode := '#Only a root method by default'.
+	isLibrary := false

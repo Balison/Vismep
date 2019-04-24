@@ -6,4 +6,4 @@ getCallee: relation
 		ifPresent: [ model at: (relation third  -> relation sixth ) ]
 		ifAbsent: [  (PyFunction newFile: relation sixth name: relation third)
 						lineStart: relation seventh asNumber; 
-						lineEnd: (relation seventh asNumber + relation last asNumber - 1). ].
+						lineEnd: (relation seventh asNumber + relation ninth asNumber - 1). ].

@@ -16,7 +16,8 @@
 		"memory",
 		"sourceCode",
 		"memoryLines",
-		"view"
+		"view",
+		"isLibrary"
 	],
 	"name" : "PyFunction",
 	"type" : "normal"

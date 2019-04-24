@@ -2,9 +2,8 @@ hooks
 renderIn: aView
 
 	| els |
-	els := (RTBox new
-		borderColor: Color veryLightGray) elementsOn: model values.
-	els @ RTDraggableChildren.
+	els := self createElements.
+	els @ PyDraggableChildren.
 	
 	self normalizeElements: els.
 	

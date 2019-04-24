@@ -2,8 +2,7 @@ hooks
 renderIn: aView
 
 	| els |
-	els := (RTBox new
-		borderColor: Color veryLightGray) elementsOn: model values.
+	els := self createElements.
 	
 	self createLegend: aView.
 	self normalizeElements: els.

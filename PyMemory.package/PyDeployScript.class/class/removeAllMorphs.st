@@ -1,4 +1,0 @@
-removing
-removeAllMorphs 
-
-	World removeAllMorphs

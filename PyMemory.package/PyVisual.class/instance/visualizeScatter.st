@@ -1,28 +1,30 @@
 visualization
 visualizeScatter
 
-	| b ds |
+	| b ds x y |
 	b := RTGrapher new.
 	b extent: 500@400.
 	ds := RTData new.
-	"y := RTScale log
-		base: Float e;
-    domain: (#(0 9) collect: #exp);
+	y := RTScale log
     range: (Array with: 0 with: b extent y).
 
 	x := RTScale log
-		base: Float e;
-    domain: (#(0 9) collect: #exp);
-    range: (Array with: 0 with: b extent x)."
+    range: (Array with: 0 with: b extent x).
 	ds dotShape circle
 		size: 8;
 		color: (self defaultColorBoxes alpha: 0.6).
 	ds points: (model values reject: [ :v | v name = '<root>']).
-	ds x: [ :m | m timesExecuted ].
-	ds y: [ :m | m memory ].
+	ds x: [ :m | x scale: (m timesExecuted + 1) ].
+	ds y: [ :m | y scale: (m memory + 1) ].
 	ds interaction popupView: self popupBlock backgroundColor: (Color lightGray alpha: 0.8).
 	
 	b add: ds.
+	
+	b axisX labelConversion: [ :n |
+		((x invert: n) - 1) round: 2 ].
+	
+	b axisY labelConversion: [ :n |
+		((y invert: n) - 1) round: 2 ].
 	
 	b axisX title: '#Executions'.
 	b axisY title: 'Memory'.

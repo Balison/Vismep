@@ -3,5 +3,5 @@ unhighlightNode: anElement
 "Unhighlight an element"
 
 	anElement trachelShape
-		strokePaint: Color veryLightGray;
-		strokeWidth: 1
+		strokePaint: (anElement attributeAt: 'borderColor');
+		strokeWidth: (anElement attributeAt: 'borderWidth')

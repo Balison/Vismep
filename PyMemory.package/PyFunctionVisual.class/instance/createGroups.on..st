@@ -3,7 +3,7 @@ createGroups: els on: aView
 "Create groups of elements according to: incoming myself outgoing"
 
 	| es |
-	self incoming: (els select: [ :e | (e model isIncomingRespectTo: function) & (e model ~= function) ]).
+	self incoming: (els select: [ :e | (e model isIncomingRespectTo: function) & ((e model isOutgoingRespectTo: function) not)& (e model ~= function) ]).
 	self outgoing: (els select: [ :e | (e model isOutgoingRespectTo: function) & (e model ~= function) ]).
 	self myself: (els select: [ :e | e model = function ]).
 	self highlightNode: myself elements first.

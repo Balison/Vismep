@@ -1,4 +1,5 @@
 hooks
 highlightNode: anElement
 
-	self subclassResponsibility 
+	anElement attributeAt: 'borderColor' put: anElement trachelShape strokePaint.
+	anElement attributeAt: 'borderWidth' put: anElement trachelShape strokeWidth.
