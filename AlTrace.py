@@ -2,9 +2,10 @@ import sys
 import inspect
 import threading
 import re
-import csv 
+import csv
+import gc
 
-filterNames = [r".*lib/python.*" , r"^<frozen.*>", r".*AlTrace.py$", r".*AlMemory.py$", r".*AlProfiler.py$"]
+filterNames = [r"^<frozen.*>", r".*AlTrace.py$", r".*AlMemory.py$", r".*AlProfiler.py$"]
 
 def filename_filter(name):
     i = 0
@@ -34,8 +35,8 @@ def trace_calls(frame, event, arg):
             try: linesFrame = len(inspect.getsourcelines(frame)[0]) 
             except: linesFrame = 0
             
-            text.append([threading.get_ident(),caller_name,func_name,caller_filename,caller_line_no,func_filename,func_line_no,linesCaller,linesFrame])
-        else:
+            text.append([threading.get_ident(),caller_name,func_name,caller_filename,caller_line_no,func_filename,func_line_no,linesCaller,linesFrame,caller.f_code.co_firstlineno,sum(gc.get_count())])
+            else:
             pass
     else:
         pass
@@ -50,8 +51,8 @@ def initTrace(name, program):
     
     exec(program)
 
-    headers = ['IdThread','Caller','Callee','FileCaller','LineOfCall','FileCallee','LineOfDef','SizeCaller','SizeCallee']
-    with open("AlProfiler_" + name + "/AlTrace" + name + ".csv", 'w') as traceFile:
+    headers = ['IdThread','Caller','Callee','FileCaller','LineOfCall','FileCallee','LineOfDef','SizeCaller','SizeCallee','CallerDef','Uncollectable']
+	with open("AlProfiler_" + name + "/AlTrace" + name + ".csv", 'w') as traceFile:
         trace = csv.writer(traceFile)
         trace.writerow(headers)
         trace.writerows(text)
