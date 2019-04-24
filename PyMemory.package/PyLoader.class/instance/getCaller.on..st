@@ -5,6 +5,8 @@ getCaller: relation on: index
 	^ (index == 1) 
 	ifFalse: [  model at: relation second -> relation fourth
 					ifPresent: [ :function | function thread: relation first asNumber.  ]
-					ifAbsent: [ PyFunction newFile: relation fourth 
-											name: relation second thread: relation first asNumber. ] ]
+					ifAbsent: [ (PyFunction newFile: relation fourth 
+											name: relation second thread: relation first asNumber)
+								   lineStart: (relation at: 10) asNumber; 
+									lineEnd: ((relation at: 10) asNumber + relation eighth asNumber - 1) ] ]
 	ifTrue: [ PyRoot new ].
