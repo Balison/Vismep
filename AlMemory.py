@@ -17,7 +17,7 @@ def display_top(name, snapshot, key_type='lineno', limit=10000):
         tracemalloc.Filter(False, "*AlMemory.py"),
         tracemalloc.Filter(False, "*AlTrace.py"),
         tracemalloc.Filter(False, "<*>"),
-        tracemalloc.Filter(False, "*lib/python*"),
+        #tracemalloc.Filter(False, "*lib/python*"),
     ))
 
     top_stats = snapshot.statistics(key_type, cumulative=True)
