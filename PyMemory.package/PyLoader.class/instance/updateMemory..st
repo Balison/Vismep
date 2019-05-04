@@ -6,11 +6,10 @@ updateMemory: fileName
 	stream := fileName asFileReference readStream.
 	stream nextLine.
 	[ (line := stream nextLine) notNil ] whileTrue: 
-		[ | row |
+		[ | row func |
 		row := line splitOn: #,.
-		 model values 
-			detect: [ :fun | (fun file = row second) & 
-					(row third asNumber between: fun lineStart asNumber and: fun lineEnd) ]
-			ifFound: [ :function | function addMemory: row fourth asNumber 
-												onLine: row third asNumber.
-		 									model at: function code put: function ]. ]
+		func := model at: (row first -> row second).
+		row third = 'start' 
+			ifTrue: [ func startBlocks: row fourth asNumber garbage: row fifth asNumber ]
+			ifFalse: [ func endBlocks: row fourth asNumber garbage: row fifth asNumber ].
+		model at: func code put: func ]

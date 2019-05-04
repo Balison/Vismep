@@ -13,5 +13,5 @@ createEdges: els on: aView
 					headOffset: 0.8;
 					color: self defaultColorEdges
 					);
-		connectFrom: #yourself toAll: [:e | e callsTo collect: #key ].
+		connectFrom: #yourself toAll: [:e | e callsTo keys collect: #key ].
 		self normalizeEdges: els.

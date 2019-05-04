@@ -13,11 +13,13 @@
 		"thread",
 		"lineStart",
 		"lineEnd",
-		"memory",
 		"sourceCode",
-		"memoryLines",
 		"view",
-		"isLibrary"
+		"isLibrary",
+		"blocks",
+		"uncollected",
+		"stack",
+		"memoryLines"
 	],
 	"name" : "PyFunction",
 	"type" : "normal"

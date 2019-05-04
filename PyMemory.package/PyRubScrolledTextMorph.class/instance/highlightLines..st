@@ -3,6 +3,7 @@ highlightLines: aCollection
 
 	| max |
 	max := aCollection ifEmpty: [ 0 ] ifNotEmpty: [ (aCollection  collect: #value) max ].
+
 	aCollection do: [:assoc | | line lineColor | 
 		line := self textArea lines at: assoc key.
 		lineColor := self normalizeValue: assoc value max: max.

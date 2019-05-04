@@ -3,6 +3,8 @@ initialize
 
 	super initialize.
 	calledBy := Dictionary new.
-	callsTo := Set new.
-	memory := 0.
+	callsTo := Dictionary new.
+	blocks := OrderedCollection new.
+	uncollected := OrderedCollection new.
 	memoryLines := Dictionary new.
+	stack := Stack new.

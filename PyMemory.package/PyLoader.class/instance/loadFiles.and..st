@@ -2,10 +2,11 @@ visualization
 loadFiles: fullName and: baseName
 "Given the fullName and the baseName load the AlTrace_fileName.csv and AlMemory_fileName.csv generated"
 	
-	| fileName callName memoryName |
+	| fileName callName memoryName linesName |
 	fileName :=  baseName copyFrom: 12 to: baseName size.
-	callName := fullName , '/AlTrace' , fileName , '.csv'.
-	memoryName := fullName , '/AlMemory' , fileName , '.csv'.
+	callName := fullName , '/AlTrace_' , fileName , '.csv'.
+	memoryName := fullName , '/AlMemory_' , fileName , '.csv'.
+	linesName := fullName , '/AlLines_' , fileName , '.csv'.
 	
-	self generateModelWith: callName and: memoryName.
+	self generateModelWith: (Array with: callName with: memoryName with: linesName).
 	^ self visualize
