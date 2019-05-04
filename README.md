@@ -18,7 +18,7 @@ For example:
 python AlProfiler.py example.py main
 
 ```
-This will generate a directory AlProfiler_example with two .csv files.
+This will generate a directory AlProfiler_example with three .csv files.
 
 
 **Start AlProfiler**: Open your Pharo 7 image and evaluate the following inside Pharo:
