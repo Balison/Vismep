@@ -19,7 +19,8 @@
 		"blocks",
 		"uncollected",
 		"stack",
-		"memoryLines"
+		"memoryLines",
+		"viewGC"
 	],
 	"name" : "PyFunction",
 	"type" : "normal"

@@ -1,4 +1,5 @@
 accessing
 uncollected
 
-	^ (self garbage collect: [ :assoc | assoc value - assoc key ]) average
+	self garbage ifEmpty: [ ^ 0 ].
+	^ (self garbage collect: [ :assoc | assoc value - assoc key ]) max

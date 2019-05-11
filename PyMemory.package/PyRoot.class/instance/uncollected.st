@@ -1,0 +1,4 @@
+accessing
+uncollected 
+
+	^ 0
