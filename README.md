@@ -4,15 +4,21 @@ AlProfiler is a memory profiler that helps programmers to understand the memory 
 
 AlProfiler runs on top of [Pharo](http://pharo.org), the live programming environment.
 
+## System requirements
+AlProfiler needs of the library [psutil](https://pypi.org/project/psutil/) of Python. To install psutil, execute the following script on the terminal:
+```
+pip install psutil
+```
+
 ## How to use
 
 **Run AlProfiler**: Open a terminal and execute the following script: 
 
 ```
-python AlProfiler.py <principalFile.py> <runFunction>
+python AlProfiler.py <pathPrincipalFile.py> <runFunction> <argumentsFunction>
 
 ```
-AlProfiler need the path of the principal python file and the running function of the application.
+AlProfiler need the path of the principal python file, the running function of the application and if it's necessary the arguments for the function.
 For example:
 ```
 python AlProfiler.py example.py main
