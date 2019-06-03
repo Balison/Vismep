@@ -18,9 +18,9 @@
 		"isLibrary",
 		"blocks",
 		"uncollected",
-		"stack",
 		"memoryLines",
-		"viewGC"
+		"viewGC",
+		"timesExecuted"
 	],
 	"name" : "PyFunction",
 	"type" : "normal"

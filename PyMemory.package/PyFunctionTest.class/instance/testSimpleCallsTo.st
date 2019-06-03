@@ -1,8 +1,8 @@
 tests
 testSimpleCallsTo
 
-	funA addCallee: funB onLine: 1.
-	funB addCallee: funC onLine: 3.
+	funA addCallee: funB onLine: 1 times: 1.
+	funB addCallee: funC onLine: 3 times: 1.
 	
 	self assert: funA calledBy isEmpty.
 	self assert: funC callsTo isEmpty.

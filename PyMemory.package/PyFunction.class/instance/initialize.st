@@ -7,4 +7,3 @@ initialize
 	blocks := OrderedCollection new.
 	uncollected := OrderedCollection new.
 	memoryLines := Dictionary new.
-	stack := Stack new.

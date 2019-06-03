@@ -1,4 +1,4 @@
 accessing
 timesExecuted
 
-	^ calledBy values sum
+	^ timesExecuted
