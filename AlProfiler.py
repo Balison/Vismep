@@ -230,12 +230,25 @@ def profile(frame, event, arg):
 
 
 def createProgramTrace(name, path, func_name, args):
-	print(args)
+	#print(args)
 	if len(args) == 0:
 		call = '{}()'.format(func_name)
 	else:
-		realArgs = map(ast.literal_eval, args[0].split())
-		call = '{}({})'.format(func_name, *realArgs)
+		realArgs = list(map(ast.literal_eval, args))
+		print(realArgs) 
+		listArgs = ''
+		mappedArgs = '{}'
+		i = 0
+		while i < len(realArgs): 
+			if i == len(realArgs) - 1:
+				listArgs = listArgs + mappedArgs.format(realArgs[i]) 
+			else:
+				listArgs = listArgs + mappedArgs.format(realArgs[i]) + ','
+			i += 1
+		#print(listArgs)
+		call = '{}({})'.format(func_name, listArgs)
+
+
 
 	program = '''import sys
 sys.path.insert(0, '{}')
@@ -243,7 +256,7 @@ from {} import {}
 sys.settrace(profile)
 {}
 sys.settrace(None)'''.format(path, name, func_name, call)
-	print(program)
+	#print(program)
 	return program 
 
 def createFolder(name):
