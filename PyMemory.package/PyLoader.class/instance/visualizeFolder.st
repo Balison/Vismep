@@ -2,9 +2,11 @@ visualization
 visualizeFolder
 "Open a UIManager to select the directory with the csv files, load the information and then visualize it"
 
-	| baseName directory fullName |
+	| files directory |
 	directory := UIManager default chooseDirectory.
-	baseName := directory path basename.
-	fullName := directory fullName.
-	^ self loadFiles: fullName and: baseName.
+	files := directory allChildren.
+	self loadCall: (files detect: [ :file | file basename beginsWith: 'AlTrace_' ]).
+	self loadLines: (files detect: [ :file | file basename beginsWith: 'AlLines_' ]).
+	self updateMemory: (files detect: [ :file | file basename beginsWith: 'AlMemory_' ]).
+	^ self visualize
 	

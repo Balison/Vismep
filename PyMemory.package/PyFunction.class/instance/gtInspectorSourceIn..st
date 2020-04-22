@@ -8,7 +8,7 @@ gtInspectorSourceIn: composite
 			PyRubScrolledTextMorph new 
    						withLineNumbers;
 						beReadOnly;
-   						appendText: self sourceCode;
-						highlightLines: (memoryLines associations).
+   						appendText: self sourceCode.
+			codeState ifTrue: [ morph highlightLines: (memoryLines associations) ].
 			morph ].
 	

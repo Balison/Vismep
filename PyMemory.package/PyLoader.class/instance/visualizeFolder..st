@@ -2,8 +2,10 @@ visualization
 visualizeFolder: directory
 "Given the directory with the csv files, load the information and then visualize it"
 
-	| baseName fullName |
-	baseName := directory path basename.
-	fullName := directory fullName.
-	^ self loadFiles: fullName and: baseName.
+	| files |
+	files := directory allChildren.
+	self loadCall: (files detect: [ :file | file basename beginsWith: 'AlTrace_' ]).
+	self loadLines: (files detect: [ :file | file basename beginsWith: 'AlLines_' ]).
+	self updateMemory: (files detect: [ :file | file basename beginsWith: 'AlMemory_' ]).
+	^ self visualize
 	

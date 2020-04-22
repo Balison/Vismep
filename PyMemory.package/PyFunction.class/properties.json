@@ -20,7 +20,8 @@
 		"uncollected",
 		"memoryLines",
 		"viewGC",
-		"timesExecuted"
+		"timesExecuted",
+		"codeState"
 	],
 	"name" : "PyFunction",
 	"type" : "normal"
