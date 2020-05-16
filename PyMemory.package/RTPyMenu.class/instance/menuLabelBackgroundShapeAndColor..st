@@ -6,7 +6,7 @@ menuLabelBackgroundShapeAndColor: aColor
 	self labelBackground: box.
 	box color: aColor.
 	self saveLabelBackgroundColor.
-	box strokePaint: "(Color black)"nil.
+	box strokePaint: nil.
 	TRConstraint move: box onTheCenterOf: label.
 	form := TRPolygonShape new color: Color black; vertices: (Array with: 0@0 with: 6@0 with: 3@6).
 	form strokePaint: (Color black).

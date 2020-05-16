@@ -6,7 +6,7 @@ buttonLabelBackgroundShapeAndColor: aColor
 	self labelBackground: box.
 	box color: aColor.
 	self saveLabelBackgroundColor.
-	box strokePaint: "(Color black)"nil.
+	box strokePaint: nil.
 	TRConstraint move: box onTheCenterOf: label.
 
 	view canvas addFixedShape: box.

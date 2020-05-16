@@ -3,7 +3,7 @@ createParentMenu: aTitle background: aColor highlightColor: aColor2
 	| lbl index menu |
 	
 	index := view canvas fixedShapes 
-						inject: 0 into: [ :s :e | s max: (e encompassingRectangle topRight x + 10) ].
+				inject: 0 into: [ :s :e | s max: (e encompassingRectangle topRight x + 10) ].
 						
 	lbl := TRLabelShape new text: aTitle; translateLeftTo: (index +20) @ 26.
 	lbl color: textColor.
