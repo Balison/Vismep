@@ -3,6 +3,7 @@ import re
 import os
 import gc
 import ast
+import time
 import csv
 import threading
 import inspect
@@ -147,6 +148,7 @@ def pop_line(mem):
 
 
 def profile(frame, event, arg):
+	global count
 	process = Process(os.getpid())
 	mem = process.memory_info()[0]
 	code = frame.f_code
@@ -155,6 +157,12 @@ def profile(frame, event, arg):
 	#print(last_line)
 	if (not filename_filter(fun_filename)) and function_filter(fun_name):
 		gar = sum(gc.get_count())
+
+		count += 1
+		if count % 10000 == 0: 
+			sys.stdout.write("*")
+			sys.stdout.flush()
+
 		if len(last_line) != 0:
 			if event == 'line':
 				process = Process(os.getpid())
@@ -270,8 +278,9 @@ def createFolder(name):
 	else:  
 		print ("Successfully created the directory %s " % path)
 
+
 def main(filename, func_name, args):
-	global last_line, functions
+	global last_line, functions, count
 	functions = {}
 	last_line = []
 	from datetime import datetime
@@ -284,7 +293,15 @@ def main(filename, func_name, args):
 	createFolder(name)
 	pro = createProgramTrace(name, os.path.dirname(filename), func_name, args)
 
+	sys.stdout.write("Profiling... [*")
+
+	count = 0
 	exec(pro)
+
+	count += 1
+	if count % 10000 == 0:
+		sys.stdout.write("*")
+		sys.stdout.flush()
 
 	with open("AlProfiler_" + name + "/AlTrace_" + name + ".csv", 'w') as traceFile:
 		trace = csv.writer(traceFile)
@@ -327,8 +344,10 @@ def main(filename, func_name, args):
 					trace.writerow([y.name,y.file,a,b[0]/ float(2 ** 10),b[1]])
 	traceFile.close()
 
+	sys.stdout.write("*]\n")
 
 	now = datetime.now()
 	print(now)
+
 
 main(sys.argv[1], sys.argv[2], sys.argv[3:])
