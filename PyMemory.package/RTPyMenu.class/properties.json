@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "RTMenu",
+	"category" : "PyMemory-Visualization",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "RTPyMenu",
+	"type" : "normal"
+}

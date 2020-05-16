@@ -1,0 +1,5 @@
+visualization
+configureMenu: aBlock
+
+	| myMenu |
+	

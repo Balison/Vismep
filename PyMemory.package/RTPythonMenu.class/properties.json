@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "RTMenuBuilder",
+	"category" : "PyMemory-Visualization",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"textColor",
+		"menuShape"
+	],
+	"name" : "RTPythonMenu",
+	"type" : "normal"
+}
