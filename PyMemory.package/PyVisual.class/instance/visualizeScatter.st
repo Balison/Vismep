@@ -8,12 +8,12 @@ visualizeScatter
 	y := RTScale log
     range: (Array with: 0 with: b extent y).
 
-	x := RTScale log
+	x := RTScale linear
     range: (Array with: 0 with: b extent x).
 	ds dotShape circle size: 8.
 		"color: (self defaultColorBoxes alpha: 0.6)."
 	ds points: (model values reject: [ :v | v name = '<root>']).
-	ds x: [ :m | x scale: (m timesExecuted + 1) ].
+	ds x: [ :m | m timesExecuted ].
 	ds y: [ :m | y scale: (m memory + 1) ].
 	ds interaction popupView: self popupBlock backgroundColor: (Color lightGray alpha: 0.8).
 	RTMetricNormalizer new
@@ -27,8 +27,7 @@ visualizeScatter
 	b add: ds.
 	
 	b axisX labelConversion: [ :n |
-		((x invert: n) - 1) truncated ].
-	
+		n truncated ].
 	b axisY labelConversion: [ :n |
 		((y invert: n) - 1) round: 2 ].
 	
