@@ -1,5 +1,7 @@
 # AlProfiler
 
+**Reading time: 3-5 minutes.**
+
 AlProfiler is a memory profiler that helps programmers to understand the memory consumption of Python applications by interactive visualizations.
 
 AlProfiler runs on top of [Pharo](http://pharo.org), the live programming environment.
