@@ -4,6 +4,7 @@ createEdges: els on: aView
 
 	MyEdgeBuilder new
 		view: aView;
+		moveBehind;
 		edgeColor: self defaultColorEdges;
 		objects: model values;
 		shape:
