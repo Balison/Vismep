@@ -14,4 +14,6 @@ createMenu
 	myMenu := RTPythonMenu new view: view.
 	myMenu menu: 'Find' background: ((Color fromHexString: '263238') alpha: 0.6) highlightColor: Color blue callback: [ 
 		aBlock value. ].
+	myMenu menu: 'End Session' background: ((Color fromHexString: '263238') alpha: 0.6) highlightColor: Color blue callback: [ 		self inform: 'You finish your session!! See your file csv.'.
+		self logger write. ].
 	

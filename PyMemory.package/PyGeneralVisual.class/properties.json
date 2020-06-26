@@ -6,7 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"model"
+		"model",
+		"movePosition",
+		"log"
 	],
 	"name" : "PyGeneralVisual",
 	"type" : "normal"

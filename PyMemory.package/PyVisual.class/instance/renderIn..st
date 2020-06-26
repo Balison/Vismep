@@ -19,5 +19,7 @@ renderIn: aView
 	RTTreeLayout new on: els.
 				
 	aView @ RTDraggableView @ (RTShowLabelWhenZooming new scaleThreshold: 4).
+	self addAnimation: aView.
+	
 	^ aView
 

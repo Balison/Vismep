@@ -5,7 +5,9 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"scatter"
+	],
 	"name" : "PyVisual",
 	"type" : "normal"
 }

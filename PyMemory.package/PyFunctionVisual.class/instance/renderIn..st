@@ -13,5 +13,7 @@ renderIn: aView
 	
 	aView @ RTDraggableView @ (RTShowLabelWhenZooming new scaleThreshold: 4).
 	
+	self addAnimation: aView.
+	
 	^ aView
 	

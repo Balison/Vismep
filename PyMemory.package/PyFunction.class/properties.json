@@ -21,7 +21,8 @@
 		"memoryLines",
 		"viewGC",
 		"timesExecuted",
-		"codeState"
+		"codeState",
+		"log"
 	],
 	"name" : "PyFunction",
 	"type" : "normal"

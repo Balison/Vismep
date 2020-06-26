@@ -1,0 +1,1 @@
+Class responsable of writing the logs of PyVisual

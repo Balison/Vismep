@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "AlisonFernandez 6/26/2020 15:37",
+	"super" : "Object",
+	"category" : "PyMemory-Loader",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"data"
+	],
+	"name" : "PyLogging",
+	"type" : "normal"
+}

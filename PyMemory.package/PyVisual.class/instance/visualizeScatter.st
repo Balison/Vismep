@@ -2,6 +2,7 @@ visualization
 visualizeScatter
 
 	| b ds x y |
+	self scatter ifNil: [  
 	b := RTGrapher new.
 	b extent: 500@400.
 	ds := RTData new.
@@ -16,6 +17,19 @@ visualizeScatter
 	ds x: [ :m | m timesExecuted ].
 	ds y: [ :m | y scale: (m memory + 1) ].
 	ds interaction popupView: self popupBlock backgroundColor: (Color lightGray alpha: 0.8).
+	ds elements do: [ :e | 
+		e when: TRMouseEnter do: [ movePosition := e model name.
+										self logger addTime: Time now asString 
+														position: self currentWorld currentHand position  
+														view: self nameView 
+														element: e model name 
+														event: 'Over'. ].
+		e when: TRMouseClick do: [ self logger addTime: Time now asString 
+														position: self currentWorld currentHand position  
+														view: 'Scatter'
+														element: e model name 
+														event: 'Click'. ].
+		e when: TRMouseLeave do: [ movePosition := nil. ].  ].
 	RTMetricNormalizer new
 	elements: ds elements;
 	normalizeColor: [ :e | e size ]
@@ -35,5 +49,8 @@ visualizeScatter
 	b axisY title: 'Memory (kB)'.
 	
 	self createScatterLegend: b.
+	self addAnimation: b view origin: 'Scatter'. 
+	scatter := b ].
+
 	
-	^ b
+	^ scatter

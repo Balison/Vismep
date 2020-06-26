@@ -1,0 +1,4 @@
+logging-Deprecated
+logger
+
+	^log

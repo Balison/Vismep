@@ -3,12 +3,13 @@ gtInspectorSourceIn: composite
 	<gtInspectorPresentationOrder: 1>
 	^ composite morph
 		title: 'Source';
-		display: [ | morph |
-			morph :=
-			PyRubScrolledTextMorph new 
+		display: [ | morphCode |
+			morphCode := PyRubScrolledTextMorph new 
    						withLineNumbers;
 						beReadOnly;
    						appendText: self sourceCode.
-			codeState ifTrue: [ morph highlightLines: (memoryLines associations) ].
-			morph ].
+		codeState ifTrue: [ morphCode highlightLines: (memoryLines associations) ].
+		morphCode on: #mouseEnter send: #inCode to: self.
+	
+		morphCode ].
 	
