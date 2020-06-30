@@ -1,6 +1,6 @@
 initialization
-filename
+createFile 
 	
-	| file |	
+	| file |
 	file := FileLocator imageDirectory / 'LoggingPython.csv'.
-	^ file asFileReference
+	(File named: file fullName) writeStream.
