@@ -7,7 +7,6 @@ import time
 import csv
 import threading
 import inspect
-import pathlib
 from psutil import Process
 
 filter_names = [r"^<.*>", r"^<frozen.*>", r".*AlProfiler.py$"]
