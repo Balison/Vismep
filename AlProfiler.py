@@ -7,6 +7,7 @@ import time
 import csv
 import threading
 import inspect
+import pathlib
 from psutil import Process
 
 filter_names = [r"^<.*>", r"^<frozen.*>", r".*AlProfiler.py$"]
@@ -267,9 +268,9 @@ sys.settrace(None)'''.format(path, name, func_name, call)
 	#print(program)
 	return program 
 
-def createFolder(name):
+def createFolder(defpath, name):
 	
-	path = "AlProfiler_" + name
+	path = defpath + "/AlProfiler_" + name
 
 	try:  
 		os.mkdir(path)
@@ -279,7 +280,7 @@ def createFolder(name):
 		print ("Successfully created the directory %s " % path)
 
 
-def main(filename, func_name, args):
+def main(defpath, filename, func_name, args):
 	global last_line, functions, count
 	functions = {}
 	last_line = []
@@ -290,7 +291,7 @@ def main(filename, func_name, args):
 	base = os.path.basename(absolute)
 	name = os.path.splitext(base)[0]
 
-	createFolder(name)
+	createFolder(defpath, name)
 	pro = createProgramTrace(name, os.path.dirname(filename), func_name, args)
 
 	sys.stdout.write("Profiling... [*")
@@ -303,7 +304,7 @@ def main(filename, func_name, args):
 		sys.stdout.write("*")
 		sys.stdout.flush()
 
-	with open("AlProfiler_" + name + "/AlTrace_" + name + ".csv", 'w') as traceFile:
+	with open(defpath + "/AlProfiler_" + name + "/AlTrace_" + name + ".csv", 'w') as traceFile:
 		trace = csv.writer(traceFile)
 		for x, y in functions.items():
 			headers = ['IdThread','Function','Filename','Line_Start','Size','Times']
@@ -320,7 +321,7 @@ def main(filename, func_name, args):
 	traceFile.close()
 
 	headers = ['Function','Filename','Memory_Start','Memory_End']
-	with open("AlProfiler_" + name + "/AlMemory_" + name + ".csv", 'w') as traceFile:
+	with open(defpath + "/AlProfiler_" + name + "/AlMemory_" + name + ".csv", 'w') as traceFile:
 		trace = csv.writer(traceFile)
 		trace.writerow(headers)
 		for x, y in functions.items():
@@ -335,7 +336,7 @@ def main(filename, func_name, args):
 	traceFile.close()
 
 	headers = ['Function','Filename','Line','Memory','Executed']
-	with open("AlProfiler_" + name + "/AlLines_" + name + ".csv", 'w') as traceFile:
+	with open(defpath + "/AlProfiler_" + name + "/AlLines_" + name + ".csv", 'w') as traceFile:
 		trace = csv.writer(traceFile)
 		trace.writerow(headers)
 		for x, y in functions.items():
@@ -350,4 +351,4 @@ def main(filename, func_name, args):
 	print(now)
 
 
-main(sys.argv[1], sys.argv[2], sys.argv[3:])
+main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4:])
