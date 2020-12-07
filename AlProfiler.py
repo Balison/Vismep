@@ -329,9 +329,9 @@ def main(defpath, filename, func_name, args):
 					trace.writerow([y.name,y.file,a[0]/ float(2 ** 10),a[1]/ float(2 ** 10)])
 		headers = ['Function','Filename','Uncollected_Start','Uncollected_End']
 		trace.writerow(headers)
-		for x, y in functions.items():
-			for a in y.uncollected:
-				trace.writerow([y.name,y.file,a[0],a[1]])
+		#for x, y in functions.items():
+		#	for a in y.uncollected:
+		#		trace.writerow([y.name,y.file,a[0],a[1]])
 	traceFile.close()
 
 	headers = ['Function','Filename','Line','Memory','Executed']
