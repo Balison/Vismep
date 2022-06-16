@@ -6,7 +6,7 @@ visualizeScatter
 	b := RTGrapher new.
 	b extent: 500@400.
 	ds := RTData new.
-	y := RTScale log
+	y := RTScale sqrt
     range: (Array with: 0 with: b extent y).
 
 	x := RTScale linear
@@ -14,8 +14,8 @@ visualizeScatter
 	ds dotShape circle size: 8.
 		"color: (self defaultColorBoxes alpha: 0.6)."
 	ds points: (model values reject: [ :v | v name = '<root>']).
-	ds x: [ :m | m timesExecuted ].
-	ds y: [ :m | y scale: (m memory + 1) ].
+	ds x: [ :m | x scale: m timesExecuted ].
+	ds y: [ :m | y scale: m totalMemory ].
 	ds interaction popupView: self popupBlock backgroundColor: (Color lightGray alpha: 0.8).
 	ds elements do: [ :e | 
 		e when: TRMouseEnter do: [ movePosition := e model name.
@@ -30,8 +30,10 @@ visualizeScatter
 														element: e model name 
 														event: 'Click'. ].
 		e when: TRMouseLeave do: [ movePosition := nil. ].  ].
+	
+	ds elements select: [ :el | el model isUnreachable ] thenDo: [ :el | el color: Color gray ].
 	RTMetricNormalizer new
-	elements: ds elements;
+	elements: (ds elements reject: [ :el | el model isUnreachable ]);
 	normalizeColor: [ :e | e size ]
 	using:
 		{self defaultColorBoxes .
@@ -43,10 +45,10 @@ visualizeScatter
 	b axisX labelConversion: [ :n |
 		n truncated ].
 	b axisY labelConversion: [ :n |
-		((y invert: n) - 1) round: 2 ].
+		(y invert: n) round: 2 ].
 	
 	b axisX title: '#Executions'.
-	b axisY title: 'Memory (kB)'.
+	b axisY title: 'Total Memory (MB)'.
 	
 	self createScatterLegend: b.
 	self addAnimation: b view origin: 'Scatter'. 

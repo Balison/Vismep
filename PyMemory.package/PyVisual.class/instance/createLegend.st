@@ -5,7 +5,7 @@ createLegend
 	| lb |
 	lb := MyLegendBuilder new.
 	lb view: view view; onDemand: 'About'.
-	lb addText: 'PyMemory Profiler'.
+	lb addText: 'Vismep'.
 	lb addText: 'Black border line for functions of external libraries.'.
 	lb addRectanglePolymetricWidth: 'Memory consumed' height: '# Executions' box: 'a Python function'.
 	lb addColorFadingFrom: self defaultColorBoxes to: self colorBoxes text: 'number of lines of code'.

@@ -1,4 +1,4 @@
 gt-inspector-extension
 gtDisplayOn: s
 
-	s print: self code
+	s print: self name -> self module -> self lineStart

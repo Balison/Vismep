@@ -1,13 +1,15 @@
 action
 loadLines: fileReference
-"Given the reference of file, update the hot lines of memory."
+"Given the reference of file, update the hot lines of memory. 'Function','Filename','Line_Start','Line','Memory'"
 
 	| stream line row |
 	stream := fileReference readStream.
+	"Read headers"
 	stream nextLine.
 	[ (line := stream nextLine) notNil ] whileTrue: 
-		[ [ line isNotNil and: [ line isEmpty ] ] whileTrue: [ line := stream nextLine ].
-		line isNil ifFalse: [  
-			row := line splitOn: #,.
-			model at: row first -> row second 
-				ifPresent: [ :fun | fun addLine: row third asNumber with: row fourth asNumber executed: row fifth asNumber ]]].
+		[ | function |
+		row := line splitOn: #,..
+		function := self findFunction: row first file: row second  startingAt: row third asNumber.
+		function ifNotNil: 
+		[ function addLine: row fourth asNumber with: row fifth asNumber.
+		model at: function id put: function ] ].

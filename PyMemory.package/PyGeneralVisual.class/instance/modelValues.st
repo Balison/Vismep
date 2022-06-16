@@ -1,4 +1,4 @@
 accessing
 modelValues
 
-	^ model values
+	^ model values sorted: [ :a :b | a order < b order]

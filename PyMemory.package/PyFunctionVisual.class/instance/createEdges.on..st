@@ -1,10 +1,9 @@
 visualization
 createEdges: els on: aView
-"Create edges for the call graph"
+"Create edges for the sub call graph"
 
 	MyEdgeBuilder new
 		view: aView;
-		moveBehind;
 		edgeColor: self defaultColorEdges;
 		elements: els;
 		shape:

@@ -14,15 +14,15 @@
 		"lineStart",
 		"lineEnd",
 		"sourceCode",
+		"isUnreachable",
 		"view",
 		"isLibrary",
 		"blocks",
-		"uncollected",
 		"memoryLines",
-		"viewGC",
 		"timesExecuted",
 		"codeState",
-		"log"
+		"log",
+		"order"
 	],
 	"name" : "PyFunction",
 	"type" : "normal"
