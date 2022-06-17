@@ -302,7 +302,7 @@ class VismepProfiler():
     def write_functions(self):
         headers = ['Name','Filename','Line_Start','Size','Executions','IsUnreachable']
 
-        with open(self.folder + "/functions.csv", 'w') as func_file:
+        with open(self.folder + "/functions.csv", 'w', newline='') as func_file:
             trace = csv.writer(func_file)
             trace.writerow(headers)
             for (name, file, start) in self.functions:
@@ -323,7 +323,7 @@ class VismepProfiler():
                 calls_structured[call.c_id()] = calls_structured.get(call.c_id()) + 1
 
 
-        with open(self.folder + "/calls.csv", 'w') as call_file:
+        with open(self.folder + "/calls.csv", 'w', newline='') as call_file:
             trace = csv.writer(call_file)
             trace.writerow(headers)
             for (fname, ffile, fline, sname, sfile, sline) in calls_structured:
@@ -337,7 +337,7 @@ class VismepProfiler():
     def write_mem_lines(self):
         headers = ['Function','Filename','Line_Start','Line','Memory']
 
-        with open(self.folder + "/lines.csv", 'w') as line_file:
+        with open(self.folder + "/lines.csv", 'w', newline='') as line_file:
             trace = csv.writer(line_file)
             trace.writerow(headers)
 
@@ -354,7 +354,7 @@ class VismepProfiler():
     def write_mem_fun(self):
         headers = ['Function','Filename','Line_Start','Memory_Start','Memory_End']
 
-        with open(self.folder + "/memory.csv", 'w') as mem_file:
+        with open(self.folder + "/memory.csv", 'w', newline='') as mem_file:
             trace = csv.writer(mem_file)
             trace.writerow(headers)
 
