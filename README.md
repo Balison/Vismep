@@ -100,7 +100,7 @@ If you are on the standalone directory downloaded from Dropbox, the script will 
 
 Executing the previous script will open a Pharo image. To visualize the information extracted from the Python file, click on the *PyMemory* tab from the menu at the top and select *Open directory*. Then select the folder named Vismep_example generated at [Run Vismep](#run-vismep) as shown in the following image:
 
-![SelectFolder.JPG](images/SelectFolder.JPG)
+![SelectFolder.jpg](images/SelectFolder.jpg)
 
 ### Call graph view
 Once seleced the folder, the *Call graph view* is displayed as shown in the following image: 
