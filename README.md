@@ -15,7 +15,7 @@ Also, according to your Operative System, download and unzip the standalone from
 
 ## How to use
 
-#### 1. Run Vismep:
+### Run Vismep
 
 Open a terminal and execute the following script:
 
@@ -56,7 +56,7 @@ or
 The execution of the script will generate a folder named Vismep_example with four .csv files in the current directory.
 
 
-#### 2. Start Vismep:
+### Start Vismep
 
 Go to the directory where you previously downloaded and unzipped the standalone from [Dropbox](https://www.dropbox.com/sh/0fcpw87wfkn3p2n/AABhROrMdwnhR4-aP1e0nrNNa?dl=0). Then double click the executable Pharo.exe (for Windows), pharo (for Linux), or Pharo (for MAC at Pharo.app/Contents/MacOS on the folder downloaded and unzipped). If the double click doesn't work, open a terminal and execute the following script (consider that Pharo.exe-pharo-Pharo.app/Contents/MacOS/Pharo and Visualization.image are in the directory downloaded from the Dropbox):
 
@@ -98,9 +98,11 @@ If you are on the standalone directory downloaded from Dropbox, the script will 
 
 ## Visualizations
 
-Executing the previous script will open a Pharo image. To visualize the information extracted from the Python file, click on the *PyMemory* tab from the menu at the top and select *Open directory*. Then select the folder named Vismep_example with the corresponding four .csv files. 
+Executing the previous script will open a Pharo image. To visualize the information extracted from the Python file, click on the *PyMemory* tab from the menu at the top and select *Open directory*. Then select the folder named Vismep_example generated at [Run Vismep](#run-vismep) as shown in the following image:
 
-### 1. Call graph view
+![SelectFolder.JPG](images/SelectFolder.JPG)
+
+### Call graph view
 Once seleced the folder, the *Call graph view* is displayed as shown in the following image: 
 
 ![View.JPG](images/View.JPG)
@@ -119,12 +121,12 @@ In this example, the program under analysis has a running function named *result
 
 **Layout**: The visualization uses as default a vertical layout that places the nodes to represent calling relationships between the functions/methods and the execution order. Consequently, the relation between callers and callees is made from top to bottom, and the execution order is given from left to right.
 
-### 2. Source code view
+### Source code view
 Clicking on a function/method displays the *Source code view*. This visualization shows the source code of the selected function/method and connects it with dynamic information. This visualization highlights the background code lines based on the memory used. The background fades from light gray (i.e., little memory consumption) to orange (i.e., high memory consumption) depending on how much memory consumption increased after executing that line. A white background indicates that the memory did not increase. 
 
 ![source.JPG](images/source.JPG)
 
-### 3. Sub call graph view
+### Sub call graph view
 When selecting the *Callgraph* tab at the top of the *Source code view*, the *Sub call graph view* is shown instead of the source code. This view presents a summarized call graph based on the selected function/method. It shows the callers and callees of a selected function/method, where the callers (inside the box with a red border) and callees (inside the box with a blue border) are located at the left and right of the selected function/method, respectively. For instance, the following figure displays that the  *factorial* function was selected; therefore, its *Sub call graph view* is shown on the right panel. 
 
 ![subgraphs.JPG](images/subgraphs.JPG) 
@@ -133,7 +135,7 @@ The following figure illustrates that *b* function is selected in the *Sub call 
 
 ![navigating.JPG](images/navigating.JPG)
 
-### 4. Scatter plot view
+### Scatter plot view
 This view illustrates each function/method as a colored point based on the number of lines of code, and it is placed on the graph according to the total memory consumed (Y-axis) and the number of executions (X-axis). In some cases, the total memory consumed (sum of memory consumption per execution) is negative. The latter indicates that during some execution or executions of a function/method, the garbage collector is activated, and several blocks of memory are released. 
 
 ### Interactions
